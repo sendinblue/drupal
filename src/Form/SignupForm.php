@@ -148,8 +148,10 @@ class SignupForm extends ContentEntityForm {
       '#suffix' => '</div>',
     ];
 
+
     foreach ($attributes as $attribute) {
-      $settings_attribute = $settings['fields']['mergefields'][$attribute['name']];
+      $field = $settings['fields']['mergefields'];
+      $settings_attribute = (isset($field)) ? $field[$attribute['name']] : NULL;
 
       $form['wrap_left']['fields']['mergefields'][$attribute['name']]['check'] = [
         '#type' => 'checkbox',
