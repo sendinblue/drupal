@@ -23,3 +23,6 @@ list subscriptions on a single form
 * Download the Entity and Libraries modules into your Drupal's libraries folder
 * Download and install the latest version of the plugin
 * Setup you API key on the main page of the plugin
+
+## Credits
+This plugin has been originally developed by [LoicLEMEUT](https://github.com/LoicLEMEUT)
