@@ -18,6 +18,10 @@
                                 {% endif %}
                             {% endfor %}
                         </p>
+
+                        <p>
+                            {{ sendinblue_logout_form }}
+                        </p>
                     </div>
                     <span class="col-md-12"><b>{% trans %}Contacts{% endtrans %}</b></span>
                     <div class="col-md-8 row" style="margin-bottom: 10px;">
@@ -29,6 +33,13 @@
                             |t({ '@sendinblue_list': 'https://my.sendinblue.com/users/list/?utm_source=drupal_plugin&utm_medium=plugin&utm_campaign=module_link' }) }}
                         </p>
                     </div>
+                </div>
+            </div>
+            <div class="panel panel-default row small-content">
+                <div class="page-header">
+                    <strong>{% trans %}Registering user{% endtrans %}</strong></div>
+                <div class="panel-body">
+                    {{ sendinblue_user_register_form }}
                 </div>
             </div>
             <div class="panel panel-default row small-content">
