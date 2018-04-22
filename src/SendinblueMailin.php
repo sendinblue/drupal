@@ -23,7 +23,7 @@ class SendinblueMailin {
   public function __construct($base_url, $api_key) {
     if (!function_exists('curl_init')) {
       $msg = 'SendinBlue requires CURL module';
-      watchdog('sendinblue', $msg, NULL, WATCHDOG_ERROR);
+      \Drupal::logger('sendinblue')->error($msg);
       return;
     }
     $this->baseUrl = $base_url;
@@ -46,7 +46,7 @@ class SendinblueMailin {
   private function doRequest($resource, $method, $input) {
     if (!function_exists('curl_init')) {
       $msg = 'SendinBlue requires CURL module';
-      watchdog('sendinblue', $msg, NULL, WATCHDOG_ERROR);
+      \Drupal::logger('sendinblue')->error($msg);
       return NULL;
     }
     $called_url = $this->baseUrl . "/" . $resource;
@@ -84,7 +84,7 @@ class SendinblueMailin {
   private function doRequestDirect($data) {
     if (!function_exists('curl_init')) {
       $msg = 'SendinBlue requires CURL module';
-      watchdog('sendinblue', $msg, NULL, WATCHDOG_ERROR);
+      \Drupal::logger('sendinblue')->error($msg);
       return NULL;
     }
     $url = 'http://ws.mailin.fr/';
